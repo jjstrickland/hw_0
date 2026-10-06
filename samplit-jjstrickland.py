@@ -5,8 +5,6 @@ import random
 import sys
 
 # RESOLVED MERGE CONFLICTS
-with open(filename, "r") as file:
-
 filename1 = sys.argv[1] # stores filename
 
 with open(filename1, "r") as file:
