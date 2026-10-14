@@ -42,13 +42,12 @@ def time_view(request):
 
 def sum_view(request):
     """A view that reads query parameters n1 and n2 from the GET request, 
-    converts them to a number, and returns a JSON response of the form 
+    converts them to a number, and returns a HTTP response of the form 
     {"sum": value}, where value is a number."""
     n1 = float(request.GET.get('n1', 0))
     n2 = float(request.GET.get('n2', 0))
     result = n1 + n2
-    return JsonResponse({"sum": result})
-
+    return HttpResponse(f"<p>{result:g}</p>", content_type="text/html")
 
 # ---------------------------------------------------------------------------
 # HW4  — user creation
