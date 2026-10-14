@@ -1,0 +1,5 @@
+
+venv-d136/
+__pycache__/
+*.py[cod]
+db.sqlite3
