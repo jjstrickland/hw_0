@@ -20,7 +20,7 @@ import io
 #                      Lecture, QRCodeUpload, is_instructor, is_student,
 #                      getUploadsForCourse)
 
-CDT = zoneinfo.ZoneInfo("America/Chicago")
+CDT = ZoneInfo("America/Chicago")
 
 
 # ---------------------------------------------------------------------------
@@ -36,7 +36,7 @@ def index(request):
 def time_view(request):
     """A view function that returns a plain text HttpResponse containing
         the current Central time formatted as 'HH:MM'"""
-    current_time = datetime.now(ZoneInfo("America/Chicago"))
+    current_time = datetime.now(CDT)
     formatted_time = current_time.strftime("%H:%M")
     return HttpResponse(formatted_time)
 
