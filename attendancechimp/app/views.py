@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from datetime import datetime
-import zoneinfo
+from zoneinfo import ZoneInfo
 import json
 import io
 
@@ -36,7 +36,7 @@ def index(request):
 def time_view(request):
     """A view function that returns a plain text HttpResponse containing
         the current Central time formatted as 'HH:MM'"""
-    current_time = datetime.now(zoneinfo("America/Chicago"))
+    current_time = datetime.now(ZoneInfo("America/Chicago"))
     formatted_time = current_time.strftime("%H:%M")
     return HttpResponse(formatted_time)
 
