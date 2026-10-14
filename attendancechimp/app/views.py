@@ -36,8 +36,7 @@ def index(request):
 def time_view(request):
     """A view function that returns a plain text HttpResponse containing
         the current Central time formatted as 'HH:MM'"""
-    
-    current_time = datetime.now(ZoneInfo("America/Chicago"))
+    current_time = datetime.now(zoneinfo("America/Chicago"))
     formatted_time = current_time.strftime("%H:%M")
     return HttpResponse(formatted_time)
 
@@ -45,7 +44,6 @@ def sum_view(request):
     """A view that reads query parameters n1 and n2 from the GET request, 
     converts them to a number, and returns a HTTP response of the form 
     {"sum": value}, where value is a number."""
-    
     n1 = float(request.GET.get('n1', 0))
     n2 = float(request.GET.get('n2', 0))
     result = n1 + n2
